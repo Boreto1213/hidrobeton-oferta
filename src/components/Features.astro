@@ -1,0 +1,168 @@
+<section class="sec" id="features">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">05</div>
+      <div>
+        <h2 class="rv">Ключови <em>функционалности</em></h2>
+        <p class="sec-lead rv" style="--d:.1s">Интерактивни визуализации из целия сайт за лесно възприемане на информацията. Разгледайте примерите по-долу: те работят.</p>
+      </div>
+    </div>
+
+    <p class="tabs-hint rv"><span class="tap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V10"/><path d="M12 9.5a1.5 1.5 0 0 1 3 0V11"/><path d="M15 10.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1a6 6 0 0 1-4.6-2.2L4 15.5a1.6 1.6 0 0 1 2.4-2L9 15"/></svg></span>Кликнете върху всеки бутон, за да видите работещ прототип на функционалността</p>
+    <div class="feat-tabs rv" role="tablist" aria-label="Функционалности">
+      <button role="tab" aria-selected="true" data-tab="t-prod"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Продуктови страници</button>
+      <button role="tab" aria-selected="false" data-tab="t-city"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Страници по градове</button>
+      <button role="tab" aria-selected="false" data-tab="t-about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.5 3-5.5 6.5-5.5s6.5 2 6.5 5.5"/><circle cx="17.5" cy="9" r="2.5"/><path d="M17 14.5c2.5 0 4.5 1.5 4.5 4"/></svg>Страница „За нас“</button>
+      <button role="tab" aria-selected="false" data-tab="t-contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>Контакти</button>
+      <button role="tab" aria-selected="false" data-tab="t-faq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.4M12 17h.01"/></svg>Често задавани въпроси</button>
+    </div>
+
+    <!-- product -->
+    <div class="demo on rv" id="t-prod" role="tabpanel">
+      <div class="demo-txt">
+        <span class="tag">Продукти</span>
+        <h3>Всяка продуктова страница за бетон е преработена</h3>
+        <p>Лесно възприемаща се информация вместо таблици и сух текст: клас, якост, приложение и среда, с интересни интерактивни визуализации.</p>
+        <ul>
+          <li>Визуално сравнение между класовете</li>
+          <li>„За какво е подходящ“ с примери от практиката</li>
+          <li>Селектор/калкулатор: тип конструкция → препоръчан бетон и обем</li>
+          <li>Форма за запитване директно от продукта</li>
+        </ul>
+      </div>
+      <div class="demo-viz">
+        <div class="viz-hint">Изберете клас бетон</div>
+        <div class="classes" id="classes"></div>
+        <div class="cc-panel">
+          <div class="cc-top">
+            <div class="cc-name" id="ccName">C25/30</div>
+            <div class="cc-mpa"><b id="ccMpa">30</b> <b style="font-size:16px">MPa</b><span>якост на натиск (куб)</span></div>
+          </div>
+          <div class="cc-chart" id="ccChart" aria-hidden="true"></div>
+          <div class="cc-axis" id="ccAxis" aria-hidden="true"></div>
+          <dl class="cc-use">
+            <dt>Приложение</dt><dd id="ccUse"></dd>
+            <dt>Натоварване</dt><dd><span class="cc-dots" id="ccLoad"><i></i><i></i><i></i><i></i><i></i></span></dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <!-- city -->
+    <div class="demo" id="t-city" role="tabpanel">
+      <div class="demo-txt">
+        <span class="tag">Градове</span>
+        <h3>Отделна страница за всеки град с база</h3>
+        <p>София, Пловдив, Плевен, Бургас и Варна: всеки град със собствена страница с локално съдържание, контакти и карта. Така хората ви намират, когато търсят „бетон“ + своя град.</p>
+        <ul>
+          <li>По-добра откриваемост при локални търсения</li>
+          <li>Всички бази и диспечери на един клик</li>
+          <li>Интерактивна карта на базите</li>
+        </ul>
+      </div>
+      <div class="demo-viz">
+        <div class="viz-hint">Изберете град на картата</div>
+        <div class="map-wrap">
+          <svg class="map-svg" id="map" viewBox="0 0 640 430" role="img" aria-label="Карта на базите на Хидробетон"></svg>
+        </div>
+        <div class="map-card" id="mapCard" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <!-- about -->
+    <div class="demo" id="t-about" role="tabpanel">
+      <div class="demo-txt">
+        <span class="tag">За нас</span>
+        <h3>Подобрена страница „За нас“</h3>
+        <p>Кратко и визуално представяне на историята на фирмата и на главния екип. Лицата зад компанията създават доверие и оставят позитивно впечатление у клиента още преди първия разговор.</p>
+        <ul>
+          <li>Интерактивна времева линия на развитието</li>
+          <li>Представяне на ключовите хора</li>
+          <li>Цифри, които показват мащаба</li>
+        </ul>
+      </div>
+      <div class="demo-viz">
+        <div class="viz-hint">Примерна структура</div>
+        <div class="story">
+          <div class="story-line"><i></i></div>
+          <div class="st"><span class="pt">01</span><div><h5>Основаване</h5><p>Началото на Хидробетон</p></div></div>
+          <div class="st"><span class="pt">02</span><div><h5>Първите бази в София</h5><p>Люлин, Горубляне, Илиянци, Гара Искър</p></div></div>
+          <div class="st"><span class="pt">03</span><div><h5>Национално покритие</h5><p>Пловдив, Плевен, Бургас, Варна</p></div></div>
+          <div class="st"><span class="pt">04</span><div><h5>Днес</h5><p>9 бази · над 550 000 м³ бетон годишно</p></div></div>
+        </div>
+        <div class="people">
+          <div class="person"><div class="av">●</div><b>Име Фамилия</b><span>Управител</span></div>
+          <div class="person"><div class="av">●</div><b>Име Фамилия</b><span>Търговски директор</span></div>
+          <div class="person"><div class="av">●</div><b>Име Фамилия</b><span>Технолог</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- contacts -->
+    <div class="demo" id="t-contact" role="tabpanel">
+      <div class="demo-txt">
+        <span class="tag">Контакти</span>
+        <h3>Контактите са лесно достъпни от всяка точка на сайта</h3>
+        <p>Подобрена страница „Контакти“: вместо дълъг списък, бърз филтър по град, ясни карти на базите и директно обаждане или имейл с едно докосване.</p>
+        <ul>
+          <li>Достъп до контактите от всяка страница</li>
+          <li>Филтър по град и тип контакт</li>
+          <li>Обаждане / имейл / маршрут с един клик</li>
+        </ul>
+      </div>
+      <div class="demo-viz">
+        <div class="viz-hint">Изберете град</div>
+        <div class="ct-search" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Търсене на база или град…</div>
+        <div class="ct-chips" id="ctChips"></div>
+        <div class="ct-list" id="ctList" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <!-- faq -->
+    <div class="demo" id="t-faq" role="tabpanel">
+      <div class="demo-txt">
+        <span class="tag">ЧЗВ</span>
+        <h3>Секция „Често задавани въпроси“</h3>
+        <p>Въпросите, които диспечерите чуват всеки ден (кой клас за основи, колко време съхне, има ли помпа), остават по телефона вместо на сайта и в Google.</p>
+        <ul>
+          <li>Ясни отговори на най-честите въпроси, с визуализации</li>
+          <li>По-малко повтарящи се обаждания към диспечерите</li>
+          <li>Отговорите се показват директно в Google и в AI търсачките</li>
+          <li>Лесно добавяне на нови въпроси от вашия екип</li>
+        </ul>
+      </div>
+      <div class="demo-viz">
+        <div class="viz-hint">Примерни въпроси · натиснете въпрос</div>
+        <div class="faq" id="faq">
+          <div class="faq-item open">
+            <button class="faq-q" aria-expanded="true">Кой клас бетон е подходящ за основи?<span class="pm">+</span></button>
+            <div class="faq-a"><div><p>За основи на жилищна сграда най-често се използва C16/20 до C25/30. Точният клас се определя от проекта на конструктора; при агресивни почви или подпочвени води е нужен по-висок клас и подходящ клас по въздействие на средата.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Колко време съхне бетонът?<span class="pm">+</span></button>
+            <div class="faq-a"><div><p>По бетона може да се стъпва след 1-2 дни. Около 7-ия ден той достига приблизително 70% от якостта си, а пълната проектна якост се отчита на 28-ия ден.</p>
+              <div class="faq-cure" aria-hidden="true"><span><i style="height:12px"></i>1 ден</span><span><i style="height:28px"></i>7 дни</span><span><i style="height:36px"></i>14 дни</span><span><i style="height:40px"></i>28 дни</span></div></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Имате ли бетон помпа?<span class="pm">+</span></button>
+            <div class="faq-a"><div><p>Да. Освен доставка на бетон предлагаме и услуга с бетон помпа. Посочете обекта и количеството при запитването и диспечерът ще планира помпата заедно с доставката.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Колко бетон ми трябва?<span class="pm">+</span></button>
+            <div class="faq-a"><div><p>Умножете дължина × ширина × дебелина в метри и добавете около 5% резерв. Например плоча 10 × 8 м с дебелина 0,15 м = 12 м³, с резерв около 12,6 м³. Калкулаторът на сайта ще смята това автоматично.</p></div></div>
+          </div>
+        </div>
+        <div class="faq-out" aria-hidden="true"><span>→ сайт</span><span>→ Google</span><span>→ AI отговори</span></div>
+      </div>
+    </div>
+
+    <div class="more">
+      <div class="mini rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><div><b>Селектор / калкулатор на бетон</b><span>Тип конструкция и среда → препоръчан клас и обем</span></div></div>
+      <div class="mini rv" style="--d:.05s"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 4h16v12H8l-4 4z"/></svg></span><div><b>Форма за запитване</b><span>Стига директно до правилната база</span></div></div>
+      <div class="mini rv" style="--d:.1s"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><div><b>Кариери</b><span>Обяви и кандидатстване онлайн</span></div></div>
+      <div class="mini rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 21V9l6-4 6 4v12M15 21V12h6v9M3 21h18"/></svg></span><div><b>Обекти / референции</b><span>Реализирани проекти с бетон на Хидробетон</span></div></div>
+      <div class="mini rv" style="--d:.05s"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h7"/></svg></span><div><b>Обществени поръчки</b><span>Подреден архив с документи</span></div></div>
+      <div class="mini rv" style="--d:.1s"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span><div><b>Български и английски</b><span>Пълна двуезична версия, лесно редактируема</span></div></div>
+    </div>
+  </div>
+</section>

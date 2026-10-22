@@ -1,0 +1,75 @@
+---
+const DEMO_URL = 'https://hidrobeton-demo.b-cdn.net/site-v7/index.html';
+
+const shots = [
+  { img: 'hero', title: 'Корица', text: 'Кинематографично начало: базата през нощта, ясно послание и директен контакт с диспечер.' },
+  { img: 'map', title: 'Карта на базите', text: 'Интерактивна карта на 9-те бази: посочвате точка и виждате диспечер и телефон.' },
+  { img: 'transport', title: 'Транспорт', text: 'Секция, водена от скрола, за 60-те бетоновоза с GPS проследяване.' },
+  { img: 'pump', title: 'Изпомпване', text: 'Анимиран чертеж: стрелата се разгъва до 56 m спрямо височината на сграда.' },
+  { img: 'mobile', title: 'Мобилни бази', text: 'Мобилна база на обекта, показана с реален референтен проект.' },
+  { img: 'classes', title: 'Класове по въздействие', text: 'Интерактивен разрез: посочвате част от конструкцията и виждате нужния клас по БДС EN 206.' },
+  { img: 'products', title: 'Специални бетони', text: 'Каталог с подбор по нужда: вода, скорост, натоварване, специална среда.' },
+];
+
+const palette = [
+  { name: 'Петрол', hex: '#003B49' },
+  { name: 'Небе', hex: '#48A9C5' },
+  { name: 'Лед', hex: '#BADDE5' },
+  { name: 'Стомана', hex: '#9CAFB4' },
+  { name: 'Мъгла', hex: '#F2F5F6' },
+];
+
+const pad = (n: number) => String(n).padStart(2, '0');
+---
+<section class="sec white" id="visual">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">04</div>
+      <div>
+        <h2 class="rv">Визуална <em>посока</em></h2>
+        <p class="sec-lead rv" style="--d:.1s">Демото, което вече видяхте, е основата на новия сайт. Това са ключовите му секции. В пълната версия ги развиваме за всички страници, на български и английски.</p>
+      </div>
+    </div>
+    <div class="dshow rv">
+      <ol class="dm-list">
+        {shots.map((s, i) => (
+          <li>
+            <button type="button" class:list={['dm-it', { on: i === 0 }]} data-i={i} aria-pressed={i === 0 ? 'true' : 'false'}>
+              <span class="dm-n mono">{pad(i + 1)}</span>
+              <span class="dm-t"><b>{s.title}</b><small>{s.text}</small></span>
+              <i class="dm-bar"></i>
+            </button>
+          </li>
+        ))}
+      </ol>
+      <div class="dm-stage">
+        <div class="browser">
+          <div class="bar"><i></i><i></i><i></i><span class="url">hidrobeton.com</span><span class="dm-live mono"><span></span>демо</span></div>
+          <div class="dm-shots">
+            {shots.map((s, i) => (
+              <img
+                src={`assets/demo/${s.img}.jpg`}
+                alt={`Демо: ${s.title}`}
+                width="1444"
+                height="812"
+                class:list={{ on: i === 0 }}
+                loading={i === 0 ? 'eager' : 'lazy'}
+                decoding="async"
+              />
+            ))}
+          </div>
+        </div>
+        <div class="dm-foot">
+          <p class="dm-cap" aria-live="polite"><span class="mono">01 / {pad(shots.length)}</span> <b>{shots[0].title}</b><span class="dm-cd">{shots[0].text}</span></p>
+          <a class="dm-open" href={DEMO_URL} target="_blank" rel="noopener">Отворете демото на живо <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="palette rv">
+      {palette.map((c) => (
+        <span class="sw"><i style={`background:${c.hex}`}></i><b>{c.name}</b>{c.hex}</span>
+      ))}
+      <span class="sw"><i style="background:#fff;border:1px solid var(--line)"></i><b>Montserrat</b>шрифт на бранда</span>
+    </div>
+  </div>
+</section>
